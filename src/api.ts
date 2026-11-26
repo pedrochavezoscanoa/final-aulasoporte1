@@ -81,6 +81,14 @@ export const service ={
 
     login:(email:string, password:string) => api.post<{token:string}>('/auth/login',{email,password}),
 
-    list 
+    list:(page:number, size:number) => api.get<Page>('/classrooms',{params:{page,size:),
 
 }
+    DEFAULT:(id:number) => api.get<Resource>(`/classrooms/${id}`),
+
+
+    CREATE : (id:number, description:string) => api.post<RequestItem>(`/classrooms/${id}/requests`,{description})},
+
+    mine: ()=> api.get<RequestItem[]>('/requests/mine'),
+}
+
